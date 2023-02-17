@@ -75,3 +75,47 @@ key-value pairs. The program should then demonstrate the four options:
 ● change an existing email address, and
 ● delete an existing name and email address.
 '''
+email = {}
+name = 1
+
+while name != 0:
+    print('\nMenu')
+    print('1. look up a person’s email address')
+    print('2. add a new name and email address')
+    print('3. change an existing email address')
+    print('4. delete an existing name and email address')
+
+    name = int(input('Enter the persons name: '))
+    
+    if name == 1:
+        user_name = input('Enter name: ')
+        email_address = int(input('Enter your email: '))
+        if user_name in email:
+            print('Name Already Exists')
+        else:
+            email[user_name] = email_address
+            print('Record added')
+
+    elif name == 2:
+        user_name = input('Enter name: ')
+        if user_name in email_address:
+            print(user_name,':',email_address[user_name])
+        else:
+            print('Record not found')
+
+    elif name == 3:
+        user_name = input('Enter name: ')
+        if user_name in email:
+            email_address = int(input('Enter new email address: '))
+            email[user_name] = email_address
+            print('Record updated')
+        else:
+            print('Record not found')
+
+    elif name == 4:
+        user_name = input('Enter name: ')
+        if user_name in email:
+            del email[user_name]
+            print('Record deleted')
+        else:
+            print('Record not found')
